@@ -1,0 +1,9 @@
+<?php
+/**
+* @file
+* Drupal Module: Hello world
+*
+* A simple hello world example module.
+*
+* @author: Nate Mow <http://drupal.org/user/1564666>
+*/
