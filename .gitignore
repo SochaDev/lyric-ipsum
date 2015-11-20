@@ -44,4 +44,4 @@ docroot/FirePHPCore
 
 # Drupal stuff.
 server/sites/default/files
-
+server/sites/*/settings*.php
