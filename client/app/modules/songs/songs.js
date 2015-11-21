@@ -96,7 +96,7 @@
 
                     for (var i=0; i < $scope.count; i++) {
                       songTmp = $scope.shuffle(songTmp);
-                      song.push('<p>' + songTmp.join('. ') + '</p>');
+                      song.push('<p>' + songTmp.join('. ') + '.</p>');
                     }
 
                     $scope.song = song;
