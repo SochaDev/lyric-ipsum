@@ -18,7 +18,7 @@
             $scope.artist = [];
             $scope.songs = [];
             $scope.song = [];
-            $scope.mode = 'song';
+            $scope.mode = 'lyrics';
             $scope.count = 5;
 
             // Function to return only unique values from an array.
