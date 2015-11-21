@@ -73,6 +73,8 @@
 
                     $scope.shuffle($scope.song);
                   });
+
+                  $scope.shuffle($scope.song);
                 });
             };
 
