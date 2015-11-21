@@ -61,6 +61,7 @@
                   }
 
                   var songs = $scope.shuffle(response.data);
+
                   angular.forEach(songs, function(song, ixSong) {
                     $scope.artist.push(song.artist);
                     $scope.songs.push(song.title);
