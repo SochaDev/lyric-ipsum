@@ -8,7 +8,8 @@
 
   var appConfig = {
     name: 'loremipsum',
-    apiRoot: 'http://' + document.location.hostname + '/api'
+    apiRoot: 'http://' + document.location.hostname + '/api',
+    lyricDelimiter: '|'
   };
 
   // Bind the module.
