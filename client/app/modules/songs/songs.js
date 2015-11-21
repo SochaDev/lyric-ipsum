@@ -93,7 +93,7 @@
                 })
                 .then(function() {
                   // Handle "paragraph" mode.
-                  if ($scope.mode !== 'song') {
+                  if ($scope.mode !== 'lyrics') {
                     var songTmp = $scope.song;
                     var song = [];
                     for (var i=0; i < $scope.count; i++) {
