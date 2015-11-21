@@ -12,6 +12,6 @@
 <p><button ng-click="generate()">Let us make song!</button></p>
 
 <div ng-if="(song.length > 0)">
-  <p>Your new lorem ipsum <b>{{ artist.join(', ') }}</b> song contains lyrics from the following: <i>{{ songs.join(', ') }}</i></p>
+  <p>Your new lorem ipsum <b>{{ artist.join('/') }}</b> song contains lyrics from the following: <i>{{ songs.join(', ') }}</i></p>
   <blockquote ng-bind-html="song.join( (mode === 'song' ? '<br>' : '') )"></blockquote>
 </div>
