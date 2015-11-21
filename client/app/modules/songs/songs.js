@@ -50,6 +50,7 @@
               $scope.mode = value;
               $scope.song = [];
             };
+
             // Function to set "paragraph" mode count.
             $scope.setCount = function(value) {
               $scope.count = value;
@@ -72,13 +73,12 @@
                     return false;
                   }
 
+                  // Randomize songs.
                   var songs = $scope.shuffle(response.data);
-
+                  // Loop songs and populate template vars.
                   angular.forEach(songs, function(song, ixSong) {
                     $scope.artist.push(song.artist);
                     $scope.songs.push(song.title);
-
-                    $scope.artist = $scope.artist.filter($scope.unique);
 
                     var lyrics = song.lyrics.split(appConfig.lyricDelimiter);
                     angular.forEach(lyrics, function(lyric, ixLyric) {
@@ -86,6 +86,9 @@
                     });
                   });
 
+                  // Make song artist(s) unique.
+                  $scope.artist = $scope.artist.filter($scope.unique);
+                  // Randomize generated song.
                   $scope.song = $scope.shuffle($scope.song);
                 })
                 .then(function() {
@@ -93,7 +96,6 @@
                   if ($scope.mode !== 'song') {
                     var songTmp = $scope.song;
                     var song = [];
-
                     for (var i=0; i < $scope.count; i++) {
                       songTmp = $scope.shuffle(songTmp);
                       song.push('<p>' + songTmp.join('. ') + '.</p>');
