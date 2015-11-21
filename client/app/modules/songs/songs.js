@@ -18,6 +18,8 @@
             $scope.artist = [];
             $scope.songs = [];
             $scope.song = [];
+            $scope.mode = 'song';
+            $scope.count = 5;
 
             // Function to return only unique values from an array.
             $scope.unique = function(value, index, self) {
@@ -41,6 +43,16 @@
               }
 
               return array;
+            };
+
+            // Function to set generate mode.
+            $scope.setMode = function(value) {
+              $scope.mode = value;
+              $scope.song = [];
+            };
+            // Function to set "paragraph" mode count.
+            $scope.setCount = function(value) {
+              $scope.count = value;
             };
 
             // Function to generate a random song.
@@ -72,12 +84,25 @@
                     angular.forEach(lyrics, function(lyric, ixLyric) {
                       $scope.song.push(lyric);
                     });
-
-                    $scope.shuffle($scope.song);
                   });
 
-                  $scope.shuffle($scope.song);
+                  $scope.song = $scope.shuffle($scope.song);
+                })
+                .then(function() {
+                  // Handle "paragraph" mode.
+                  if ($scope.mode !== 'song') {
+                    var songTmp = $scope.song;
+                    var song = [];
+
+                    for (var i=0; i < $scope.count; i++) {
+                      songTmp = $scope.shuffle(songTmp);
+                      song.push('<p>' + songTmp.join('. ') + '</p>');
+                    }
+
+                    $scope.song = song;
+                  }
                 });
+
             };
 
           }]
