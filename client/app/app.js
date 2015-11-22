@@ -17,6 +17,7 @@
     .module(appConfig.name, [
       'ngSanitize',
       'ngAnimate',
+      'artist',
       'songs'
     ])
     .constant('appConfig', appConfig)

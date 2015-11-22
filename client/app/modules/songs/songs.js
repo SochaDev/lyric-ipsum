@@ -11,11 +11,10 @@
     function() {
          return {
         templateUrl: 'app/modules/songs/output.html',
-        controller: ['$scope', '$http', 'appConfig',
-          function($scope, $http, appConfig) {
+        controller: ['$rootScope', '$scope', '$http', 'appConfig',
+          function($rootScope, $scope, $http, appConfig) {
 
             // Template variables.
-            $scope.artist = [];
             $scope.songs = [];
             $scope.song = [];
             $scope.mode = 'paragraph';
@@ -36,49 +35,46 @@
             $scope.generate = function() {
 
               // Reset template variables.
-              $scope.artist = [];
+              $rootScope.reset = false;
+              $scope.noSongs = false;
               $scope.songs = [];
               $scope.song = [];
 
               // Fetch the songs.
               $http
-                .get(appConfig.apiRoot + '/songs', {})
+                .get($rootScope.artist.songs, {})
                 .then(function(response) {
-                  if (response.status !== 200) {
+                  if (response.status !== 200 || response.data.length === 0) {
                     // TODO: handle errors.
+
+                    $scope.noSongs = true;
                     return false;
                   }
 
                   // Randomize songs.
-                  var songs = _.sample( response.data, 30);
+                  var songs = _.sample(response.data, 30);
 
                   // Loop songs and populate template vars.
                   _.forEach(songs, function(song) {
-                    $scope.artist.push(song.artist);
                     $scope.songs.push(song.title);
 
                     var lyrics = song.lyrics.split(appConfig.lyricDelimiter);
-                    var lcount = 0;
-
                     _.forEach(lyrics, function(lyric) {
                       $scope.song.push(lyric);
                     });
                   });
-
-                  // Make song artist(s) unique.
-                  $scope.artist = _.unique($scope.artist);
 
                   // Randomize generated song.
                   $scope.song = _.sample($scope.song, 30);
                 })
                 .then(function() {
                   // Handle "paragraph" mode.
-                  if ($scope.mode != 'lyrics') {
+                  if ($scope.mode !== 'lyrics') {
                     var songTmp = $scope.song;
                     var song = [];
 
                     _.times($scope.count, function(n) {
-                      var songProc = _.sample(songTmp, _.random(1,20));
+                      var songProc = _.sample(songTmp, _.random(1, 20));
                       song.push('<p>' + songProc.join('. ') + '.</p>');
                     });
 
