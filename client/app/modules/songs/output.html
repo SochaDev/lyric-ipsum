@@ -1,7 +1,6 @@
 
 <div class="modes">
-  <p>What <em>(depeche)</em> mode do you prefer?</p>
-
+  <p>What <em ng-if="(artist.cssIdentifier == 'depeche-mode')">(depeche)</em> mode do you prefer?</p>
   <ul>
     <li>
       <label>
@@ -18,7 +17,6 @@
   </ul>
 </div>
 
-
 <div class="slider" ng-if="(mode !== 'lyrics')">
   <p>Generate <span class="range-value">{{ count }}</span> paragraphs.</p>
   <div class="range-slider">
@@ -26,17 +24,15 @@
   </div>
 </div>
 
-
 <div class="actions">
   <button ng-click="generate()">Go</button>
 </div>
 
-<div ng-if="(song.length > 0)">
+<p ng-if="!reset && noSongs">Sorry, no songs are available for {{ artist.name }} yet!</p>
+
+<div ng-if="(!reset && !noSongs && song.length > 0)">
   <div class="source-songs">
-    <p>
-      Your new lorem ipsum <b>{{ artist.join('/') }}</b> song contains lyrics
-      from the following: <i>{{ songs.join(', ') }}</i>
-    </p>
+    <p>Your new lorem ipsum song contains lyrics from the following: <i>{{ songs.join(', ') }}</i></p>
   </div>
 
   <blockquote class="generated-results" ng-bind-html="song.join( (mode === 'lyrics' ? '<br/>' : '') )"></blockquote>
