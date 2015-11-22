@@ -38,12 +38,16 @@ $gray-dark: #555;
 $gray: #888;
 $gray-light: #bbb;
 $gray-lighter: #e4e4e4;
-
 $sirocco: #6C726F;
 $red: #8a181a;
-$red-light: lighten(#8a181a, 20%);
+$red-light: lighten(#8a181a, 10%);
+$red-lighter: lighten(#8a181a, 20%);
 
 // layout variables
 $base: 18px; // our base font-size;
 $text: $white;
 $bg: $black;
+
+$slider-bar: $sirocco;
+$slider-bar-active: lighten($sirocco, 10%);
+$slider-button: $red-light;
