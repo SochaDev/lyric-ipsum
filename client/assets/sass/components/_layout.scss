@@ -1,0 +1,85 @@
+// Overall Layout
+header {
+  position: fixed;
+  right: -99px;
+  top: 152px;
+  transform: rotate(-90deg);
+  transform-origin: top left 0;
+
+  a {
+    font-size: 1.5rem;
+    background-color: $sirocco;
+    display: inline-block;
+    padding: 0.25rem 0.45rem;
+    font-weight: bold;
+    color: $sirocco;
+
+    strong {
+      color: $white;
+      font-size: 1.75rem;
+    }
+
+    &:hover { color: $white; }
+  }
+
+}
+
+
+.title {
+  font-family: $fontv;
+  font-size: 4.25rem;
+  text-align: center;
+  margin: 0;
+  margin-top: 1rem;
+}
+
+
+.modes ul {
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+
+  li {
+    list-style: none;
+    display: inline-block;
+  }
+
+  label {
+    padding: 0.25rem 0;
+    padding-left: 2.5rem;
+  }
+
+  li:first-child label { padding-left: 0 }
+
+  strong {
+    font-weight: bold;
+    color: $red-light;
+    position: relative;
+    top: 3px;
+    margin-left: 0.25rem;
+  }
+}
+
+
+.actions {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+.source-songs {
+  display: none;
+}
+
+
+.ng-animate { transition: all 0.25s; }
+.ng-enter { opacity: 0; }
+.ng-enter.ng-enter-active { opacity: 1; }
+.ng-leave { opacity: 0; }
+.ng-leave.ng-leave-active { opacity: 0; }

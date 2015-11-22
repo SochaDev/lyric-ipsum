@@ -1,17 +1,43 @@
 
-<p>I am the <code>songs</code> module. I will retrieve some songs from <code>/api/songs</code> and make a new lorem ipsum song for you.</p>
+<div class="modes">
+  <p>What <em>(depeche)</em> mode do you prefer?</p>
 
-<p>What [depeche] mode do you want?
-  <input type="radio" ng-model="mode" ng-change="setMode(mode)" value="lyrics"><label>Lyrics</label>
-  <input type="radio" ng-model="mode" ng-change="setMode(mode)" value="paragraph"><label>Paragraph</label>
-</p>
-<p ng-if="(mode !== 'lyrics')">
-  Generate <input type="number" ng-model="count" ng-change="setCount(count)" min="1" max="10"> paragraphs.
-</p>
+  <ul>
+    <li>
+      <label>
+        <input type="radio" ng-model="mode" ng-change="setMode(mode)" value="paragraph">
+        <strong>Paragraph</strong>
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="radio" ng-model="mode" ng-change="setMode(mode)" value="lyrics">
+        <strong>Lyrics</strong>
+      </label>
+    </li>
+  </ul>
+</div>
 
-<p><button ng-click="generate()">Let us make song!</button></p>
+
+<div class="slider" ng-if="(mode !== 'lyrics')">
+  <p>Generate <span class="range-value">{{ count }}</span> paragraphs.</p>
+  <div class="range-slider">
+    <input class="input-range" type="range" value="5" min="1" max="9" ng-model="count" ng-change="setCount(count)">
+  </div>
+</div>
+
+
+<div class="actions">
+  <button ng-click="generate()">Go</button>
+</div>
 
 <div ng-if="(song.length > 0)">
-  <p>Your new lorem ipsum <b>{{ artist.join('/') }}</b> song contains lyrics from the following: <i>{{ songs.join(', ') }}</i></p>
-  <blockquote ng-bind-html="song.join( (mode === 'lyrics' ? '<br>' : '') )"></blockquote>
+  <div class="source-songs">
+    <p>
+      Your new lorem ipsum <b>{{ artist.join('/') }}</b> song contains lyrics
+      from the following: <i>{{ songs.join(', ') }}</i>
+    </p>
+  </div>
+
+  <blockquote class="generated-results" ng-bind-html="song.join( (mode === 'lyrics' ? '<br/>' : '') )"></blockquote>
 </div>

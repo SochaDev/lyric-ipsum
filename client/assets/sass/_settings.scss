@@ -1,0 +1,49 @@
+// sass settings and variables
+
+// breakpoints map for include-media.
+$breakpoints: (
+  xs: 500px,
+  sm: 800px,
+  md: 1024,
+  lg: 1280px
+);
+
+// universal border box sizing.
+*,*:before,*:after {
+  box-sizing: border-box;
+}
+
+// fonts
+@font-face {
+  font-family: 'Violatio';
+  src: url('../fonts/violatio/violatio.eot');
+  src: url('../fonts/violatio/violatio.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/violatio/violatio.woff2') format('woff2'),
+    url('../fonts/violatio/violatio.woff') format('woff'),
+    url('../fonts/violatio/violatio.ttf') format('truetype'),
+    url('../fonts/violatio/violatio.svg#violationregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$font: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+$fontv: 'Violatio', serif;
+
+
+// colors
+$black: #000;
+$white: #fff;
+$gray-darker: #222;
+$gray-dark: #555;
+$gray: #888;
+$gray-light: #bbb;
+$gray-lighter: #e4e4e4;
+
+$sirocco: #6C726F;
+$red: #8a181a;
+$red-light: lighten(#8a181a, 20%);
+
+// layout variables
+$base: 18px; // our base font-size;
+$text: $white;
+$bg: $black;
