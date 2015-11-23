@@ -1,1 +1,0 @@
-var wamaf=function(){console.log("WAM&F")}();
