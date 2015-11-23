@@ -7,7 +7,7 @@
   'use strict';
 
   var appConfig = {
-    name: 'loremipsum',
+    name: 'lyricipsum',
     apiRoot: 'http://lyric-ipsum.sochadev.com/api',
     lyricDelimiter: '|'
   };
