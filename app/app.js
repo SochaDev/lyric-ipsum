@@ -8,7 +8,7 @@
 
   var appConfig = {
     name: 'lyricipsum',
-    apiRoot: 'http://lyric-ipsum.sochadev.com/api',
+    apiRoot: 'http://manage.lyric-ipsum.rocks/api',
     lyricDelimiter: '|'
   };
 
