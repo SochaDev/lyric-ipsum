@@ -72,28 +72,12 @@
 
                   // Randomize generated song.
                   $scope.song = _.sample($scope.song, 30);
-
-                  if($scope.mode == 'lyrics') {
-                    var lyricsTmp = $scope.song;
-                    var song = [];
-                    var lines = _.sample(lyricsTmp, 16);
-
-                    _.forEach(lines, function(line) {
-                      // strip ending punctuation, add semicolon
-                      line = _.trim(line, '.');
-                      line = _.trim(line, '?');
-                      line = line + '; ';
-                      song.push('<p>' + line + '</p>');
-                    });
-
-                    $scope.song = song;
-                  }
                 })
                 .then(function() {
+                  var lyricsTmp = $scope.song;
 
-                  // Handle "paragraph" mode.
-                  if ($scope.mode !== 'lyrics') {
-                    var lyricsTmp = $scope.song;
+                  if ($scope.mode === 'paragraph') {
+                    // Handle "paragraph" mode.
                     var paragraphs = [];
 
                     _.times($scope.count, function(n) {
@@ -101,11 +85,8 @@
                       var sentences = [];
 
                       _.forEach(lines, function(line) {
-                        // if this line does not already end with a period or question mark,
-                        // add a period.
-                        if (
-                          !(  _.endsWith(line, '.') || _.endsWith(line, '?') )
-                        ) {
+                        // Append period if this line does not already have trailing punctuation.
+                        if (!(_.endsWith(line, '.') || _.endsWith(line, '?') ||  _.endsWith(line, '!'))) {
                           line = line + '.';
                         }
 
@@ -116,6 +97,17 @@
                     });
 
                     $scope.song = paragraphs;
+                  }
+                  else {
+                    // Handle "lyrics" mode.
+                    var song = [];
+                    var lines = _.sample(lyricsTmp, 16);
+
+                    _.forEach(lines, function(line) {
+                      song.push('<p>' + line + '</p>');
+                    });
+
+                    $scope.song = song;
                   }
 
                 });
