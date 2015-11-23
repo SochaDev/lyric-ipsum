@@ -42,7 +42,7 @@
 
               // Fetch the songs.
               $http
-                .get($rootScope.artist.songs, {})
+                .get(appConfig.apiRoot + '/songs?artist=' + $rootScope.artist.id, {})
                 .then(function(response) {
                   if (response.status !== 200 || response.data.length === 0) {
                     // TODO: handle errors.
