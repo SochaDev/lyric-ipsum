@@ -2,9 +2,29 @@
 <html lang="en" ng-app="lyricipsum" ng-strict-di="" ng-controller="controllerTemplate as template">
 <head>
   <meta charset="utf-8" />
-  <title ng-bind-html="artist.subtitle"></title>
-  <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
-  <link rel="stylesheet" href="./assets/css/screen.css" type="text/css" />
+  <title ng-bind-html="artist.subtitle + ' | Lyric Ipsum'"></title>
+  <meta name="keywords" content="lorem ipsum generator, random lyrics, lyric ipsum, jeffeoff, natemow, Socha Dev" />
+  <meta name="description" content="Generate awesome lyric ipsum dummy copy for your site! All the best artists are available! Brought to by your friends at Socha Dev, http://sochadev.github.io" />
+  <meta name="application-name" content="Lyric Ipsum" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta property="og:url" content="http://lyric-ipsum.rocks" />
+  <meta property="og:site_name" content="{{ artist.subtitle }} | Lyric Ipsum" />
+  <meta property="og:description" content="Generate awesome lyric ipsum dummy copy for your site! All the best artists are available! Brought to by your friends at Socha Dev, http://sochadev.github.io" />
+  <meta property="og:title" content="{{ artist.subtitle }} | Lyric Ipsum" />
+  <meta property="og:image" content="http://lyric-ipsum.rocks/assets/favicon/fluidicon.png" />
+  <meta property="og:type" content="product" />
+  <base href="/" />
+  <link rel="canonical" href="http://lyric-ipsum.rocks" />
+  <link rel="shortlink" href="http://lyric-ipsum.rocks" />
+  <link rel="fluid-icon" type="image/png" href="http://lyric-ipsum.rocks/assets/favicon/fluidicon.png" title="Lyric Ipsum" />
+  <link rel="apple-touch-icon" type="image/png" sizes="57x57" href="http://lyric-ipsum.rocks/assets/favicon/apple-touch-icon-57.png" />
+  <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="http://lyric-ipsum.rocks/assets/favicon/apple-touch-icon-72.png" />
+  <link rel="apple-touch-icon" type="image/png" sizes="114x114" href="http://lyric-ipsum.rocks/assets/favicon/apple-touch-icon-114.png" />
+  <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="http://lyric-ipsum.rocks/assets/favicon/apple-touch-icon-144.png" />
+  <link rel="icon" type="image/x-icon" href="http://lyric-ipsum.rocks/favicon.ico" />
+  <link rel="stylesheet" href="/assets/css/normalize.css" type="text/css" />
+  <link rel="stylesheet" href="/assets/css/screen.css" type="text/css" />
 </head>
 <body ng-class="artist.cssIdentifier">
   <header>
@@ -56,8 +76,8 @@
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.min.js"></script>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-  <script type="text/javascript" src="./app/modules/artist/artist.js"></script>
-  <script type="text/javascript" src="./app/modules/songs/songs.js"></script>
-  <script type="text/javascript" src="./app/app.js"></script>
+  <script type="text/javascript" src="/app/modules/artist/artist.js"></script>
+  <script type="text/javascript" src="/app/modules/songs/songs.js"></script>
+  <script type="text/javascript" src="/app/app.js"></script>
 </body>
 </html>
