@@ -9,7 +9,7 @@
   // Directive to handle output.
   var DirectiveOutput = [
     function() {
-         return {
+      return {
         templateUrl: 'app/modules/songs/output.html',
         controller: ['$rootScope', '$scope', '$http', 'appConfig',
           function($rootScope, $scope, $http, appConfig) {
