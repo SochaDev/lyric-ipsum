@@ -1,4 +1,20 @@
 // Overall Layout
+
+.artist {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 53px;
+  padding: 0.5rem;
+  background-color: rgba($black, 0.8);
+
+  label {
+    color: $sirocco;
+    font-weight: bold;
+  }
+}
+
+
 header {
   position: fixed;
   right: -99px;
@@ -25,16 +41,34 @@ header {
 }
 
 
+.iconography {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
 .title {
-  font-family: $fontv;
-  font-size: 4.25rem;
   text-align: center;
   margin: 0;
   margin-top: 1rem;
 }
 
 
-.modes ul {
+.mode-container {
+  @include clearfix;
+}
+
+.mode-copy {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-top: 0.25rem;
+}
+
+.modes {
+  display: inline-block;
+  float: left;
+  width: 50%;
   margin: 0;
   padding: 0;
   font-size: 1.25rem;
@@ -53,7 +87,7 @@ header {
 
   strong {
     font-weight: bold;
-    color: $red-light;
+    color: $link-light;
     position: relative;
     top: 3px;
     margin-left: 0.25rem;
@@ -70,6 +104,12 @@ header {
 .content {
   max-width: 800px;
   margin: 0 auto;
+  margin-top: 1.5rem;
+
+  .lyrics {
+    p { margin: 0; }
+    p:nth-child(4n) { margin-bottom: 1.5rem; }
+  }
 }
 
 

@@ -56,30 +56,68 @@
 
                   // Loop songs and populate template vars.
                   _.forEach(songs, function(song) {
-                    $scope.songs.push(song.title);
+                    song.title = _.unescape(song.title);
+                    song.title = song.title.replace('&#039;', "'");
+                    $scope.songs.push( _.unescape(song.title) );
 
                     var lyrics = song.lyrics.split(appConfig.lyricDelimiter);
+
                     _.forEach(lyrics, function(lyric) {
-                      $scope.song.push(lyric);
+                      lyric = _.unescape(lyric);
+                      lyric = lyric.replace('&#039;', "'");
+                      lyric = _.trim(lyric);
+                      $scope.song.push( lyric );
                     });
                   });
 
                   // Randomize generated song.
                   $scope.song = _.sample($scope.song, 30);
-                })
-                .then(function() {
-                  // Handle "paragraph" mode.
-                  if ($scope.mode !== 'lyrics') {
-                    var songTmp = $scope.song;
-                    var song = [];
 
-                    _.times($scope.count, function(n) {
-                      var songProc = _.sample(songTmp, _.random(1, 20));
-                      song.push('<p>' + songProc.join('. ') + '.</p>');
+                  if($scope.mode == 'lyrics') {
+                    var lyricsTmp = $scope.song;
+                    var song = [];
+                    var lines = _.sample(lyricsTmp, 16);
+
+                    _.forEach(lines, function(line) {
+                      // strip ending punctuation, add semicolon
+                      line = _.trim(line, '.');
+                      line = _.trim(line, '?');
+                      line = line + '; ';
+                      song.push('<p>' + line + '</p>');
                     });
 
                     $scope.song = song;
                   }
+                })
+                .then(function() {
+
+                  // Handle "paragraph" mode.
+                  if ($scope.mode !== 'lyrics') {
+                    var lyricsTmp = $scope.song;
+                    var paragraphs = [];
+
+                    _.times($scope.count, function(n) {
+                      var lines = _.sample(lyricsTmp, _.random(1, 20));
+                      var sentences = [];
+
+                      _.forEach(lines, function(line) {
+                        // if this line does not already end with a period or question mark,
+                        // add a period.
+                        if (
+                          !(  _.endsWith(line, '.') || _.endsWith(line, '?') )
+                        ) {
+                          line = line + '.';
+                        }
+
+                        sentences.push(line);
+                      });
+
+                      paragraphs.push('<p>' + sentences.join(' ') + '</p>');
+                    });
+
+                    $scope.song = paragraphs;
+                  }
+
                 });
 
             };

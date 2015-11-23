@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *, *:before, *:after {
   box-sizing: border-box; }
 
@@ -5,6 +6,13 @@
   font-family: 'Violatio';
   src: url("../fonts/violatio/violatio.eot");
   src: url("../fonts/violatio/violatio.eot?#iefix") format("embedded-opentype"), url("../fonts/violatio/violatio.woff2") format("woff2"), url("../fonts/violatio/violatio.woff") format("woff"), url("../fonts/violatio/violatio.ttf") format("truetype"), url("../fonts/violatio/violatio.svg#violationregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ogilvie';
+  src: url("../fonts/ogilvie/og.eot");
+  src: url("../fonts/ogilvie/og.eot?#iefix") format("embedded-opentype"), url("../fonts/ogilvie/og.woff2") format("woff2"), url("../fonts/ogilvie/og.woff") format("woff"), url("../fonts/ogilvie/og.ttf") format("truetype"), url("../fonts/ogilvie/og.svg#ogilvieregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -21,6 +29,82 @@ $icon-home: x y offset_x offset_y width height total_width total_height image_pa
 At the bottom of this section, we provide information about the spritesheet itself
 $spritesheet: width height image $spritesheet-sprites;
 */
+@font-face {
+  font-family: 'li';
+  src: url("../fonts/li/li.eot");
+  src: url("../fonts/li/li.eot#iefix") format("embedded-opentype"), url("../fonts/li/li.woff") format("woff"), url("../fonts/li/li.ttf") format("truetype"), url("../fonts/li/li.svg#li") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "li";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-stem:before {
+  content: '\e800'; }
+
+/* '' */
+.icon-flower:before {
+  content: '\e801'; }
+
+/* '' */
+.icon-cat-skull:before {
+  content: '\e802'; }
+
+/* '' */
+.icon-sp:before {
+  content: '\e803'; }
+
+/* '' */
+.depeche-mode .artist-font {
+  font-family: "Violatio", serif; }
+
+.depeche-mode .title {
+  font-family: "Violatio", serif;
+  font-size: 4.25rem; }
+
+.depeche-mode .icon {
+  color: #8a181a; }
+
+.depeche-mode .iconography-top {
+  font-size: 15rem; }
+
+.depeche-mode .iconography-bottom {
+  font-size: 8rem; }
+  .depeche-mode .iconography-bottom .icon {
+    position: relative;
+    right: 2rem; }
+
+.skinny-puppy .artist-font {
+  font-family: "Ogilvie", serif; }
+
+.skinny-puppy .title {
+  font-family: "Ogilvie", serif;
+  font-size: 5rem;
+  letter-spacing: 3px; }
+
+.skinny-puppy .icon {
+  color: #555; }
+
+.skinny-puppy .iconography-top {
+  font-size: 16rem; }
+
+.skinny-puppy .iconography-bottom {
+  font-size: 11rem;
+  position: relative;
+  top: -2rem; }
+
 html {
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
   font-size: 18px;
@@ -104,6 +188,41 @@ button {
   text-stroke: 0.75px #fff;
   -webkit-text-stroke: 0.75px #fff; }
 
+.select {
+  font-size: 1rem;
+  position: relative;
+  display: inline-block;
+  color: #bbb; }
+  .select select {
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    display: block;
+    padding: 0.15rem 0.5rem;
+    margin: 0;
+    transition: border-color 0.2s;
+    border: none;
+    border-radius: 0;
+    background: #000;
+    color: #bbb;
+    line-height: normal;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit; }
+    .select select:hover {
+      color: #fff; }
+
+.artist {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 53px;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.8); }
+  .artist label {
+    color: #6C726F;
+    font-weight: bold; }
+
 header {
   position: fixed;
   right: -99px;
@@ -123,26 +242,43 @@ header {
     header a:hover {
       color: #fff; }
 
+.iconography {
+  width: 100%;
+  text-align: center;
+  margin: 0; }
+
 .title {
-  font-family: "Violatio", serif;
-  font-size: 4.25rem;
   text-align: center;
   margin: 0;
   margin-top: 1rem; }
 
-.modes ul {
+.mode-container::after {
+  clear: both;
+  content: "";
+  display: table; }
+
+.mode-copy {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-top: 0.25rem; }
+
+.modes {
+  display: inline-block;
+  float: left;
+  width: 50%;
   margin: 0;
   padding: 0;
   font-size: 1.25rem; }
-  .modes ul li {
+  .modes li {
     list-style: none;
     display: inline-block; }
-  .modes ul label {
+  .modes label {
     padding: 0.25rem 0;
     padding-left: 2.5rem; }
-  .modes ul li:first-child label {
+  .modes li:first-child label {
     padding-left: 0; }
-  .modes ul strong {
+  .modes strong {
     font-weight: bold;
     color: #b52022;
     position: relative;
@@ -155,7 +291,12 @@ header {
 
 .content {
   max-width: 800px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-top: 1.5rem; }
+  .content .lyrics p {
+    margin: 0; }
+  .content .lyrics p:nth-child(4n) {
+    margin-bottom: 1.5rem; }
 
 .source-songs {
   display: none; }
@@ -174,17 +315,6 @@ header {
 
 .ng-leave.ng-leave-active {
   opacity: 0; }
-
-.vector-container {
-  width: 100%;
-  text-align: center; }
-
-.flower path {
-  opacity: 1;
-  fill: #8a181a;
-  transition: all 0.5s; }
-  .flower path:hover {
-    opacity: 1; }
 
 input[type=range] {
   -webkit-appearance: none;

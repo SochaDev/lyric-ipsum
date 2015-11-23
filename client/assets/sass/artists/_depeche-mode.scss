@@ -1,0 +1,28 @@
+// Meaningless & Forgettable
+.depeche-mode {
+  $link: $red;
+  $link-light: $red-light;
+  $link-lighter: $red-lighter;
+
+  .artist-font { font-family: $font-depeche-mode; }
+
+  .title {
+    font-family: $font-depeche-mode;
+    font-size: 4.25rem;
+  }
+
+  .icon { color: $red; }
+
+  .iconography-top {
+    font-size: 15rem;
+  }
+
+  .iconography-bottom {
+    font-size: 8rem;
+
+    .icon {
+      position: relative;
+      right: 2rem;
+    }
+  }
+}

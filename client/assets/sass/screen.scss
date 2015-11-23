@@ -34,13 +34,14 @@
 
 // any custom global mixins of our own creation.
 @import 'mixins';
-
-// overall global styling and general layout goes in here.
-@import 'global';
+@import 'components/icons';
 
 
 // from here import other partials in a modular fashion,
 // moving from general to more specific.
+@import 'artists/depeche-mode';
+@import 'artists/skinny-puppy';
+
+@import 'global';
 @import 'components/layout';
-@import 'components/flowers';
 @import 'components/slider';

@@ -1,7 +1,9 @@
 
-<div class="modes">
-  <p>What <em ng-if="(artist.cssIdentifier == 'depeche-mode')">(depeche)</em> mode do you prefer?</p>
-  <ul>
+<div class="mode-container">
+  <div class="mode-copy">
+    Which <em ng-if="(artist.cssIdentifier == 'depeche-mode')">(depeche)</em> mode do you prefer?
+  </div>
+  <ul class="modes">
     <li>
       <label>
         <input type="radio" ng-model="mode" ng-change="setMode(mode)" value="paragraph">
@@ -28,12 +30,12 @@
   <button ng-click="generate()">Go</button>
 </div>
 
-<p ng-if="!reset && noSongs">Sorry, no songs are available for {{ artist.name }} yet!</p>
+<p ng-if="!reset && noSongs">Sorry, no songs are available for {{ artist.name }} yet.</p>
 
 <div ng-if="(!reset && !noSongs && song.length > 0)">
   <div class="source-songs">
-    <p>Your new lorem ipsum song contains lyrics from the following: <i>{{ songs.join(', ') }}</i></p>
+    <p>Your new lyric ipsum song contains lyrics from the following: <i>{{ songs.join(', ') }}</i></p>
   </div>
 
-  <blockquote class="generated-results" ng-bind-html="song.join( (mode === 'lyrics' ? '<br/>' : '') )"></blockquote>
+  <blockquote class="generated-results {{ mode }}" ng-bind-html="song.join( (mode === 'lyrics' ? ' ' : '') )"></blockquote>
 </div>

@@ -1,0 +1,27 @@
+// Rot & Assimilate
+.skinny-puppy {
+  $link: $gray;
+  $link-light: $red-light;
+  $link-lighter: $red-lighter;
+
+  .artist-font { font-family: $font-skinny-puppy; }
+
+  .title {
+    font-family: $font-skinny-puppy;
+    font-size: 5rem;
+    letter-spacing: 3px;
+  }
+
+  .icon { color: $gray-dark; }
+
+  .iconography-top {
+    font-size: 16rem;
+  }
+
+  .iconography-bottom {
+    font-size: 11rem;
+    position: relative;
+    top: -2rem;
+  }
+
+}
