@@ -27,21 +27,9 @@ $breakpoints: (
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Ogilvie';
-  src: url('../fonts/ogilvie/og.eot');
-  src: url('../fonts/ogilvie/og.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/ogilvie/og.woff2') format('woff2'),
-    url('../fonts/ogilvie/og.woff') format('woff'),
-    url('../fonts/ogilvie/og.ttf') format('truetype'),
-    url('../fonts/ogilvie/og.svg#ogilvieregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
 $font-main: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
 $font-depeche-mode: 'Violatio', serif;
-$font-skinny-puppy: 'Ogilvie', serif;
+$font-skinny-puppy: 'Six Caps', serif;
 
 
 // colors
@@ -53,12 +41,15 @@ $gray: #888;
 $gray-light: #bbb;
 $gray-lighter: #e4e4e4;
 
-// depeche-mode colors;
+// depeche-mode colors
+
 $sirocco: #6C726F;
 $red: #8a181a;
 $red-light: lighten(#8a181a, 10%);
 $red-lighter: lighten(#8a181a, 20%);
 
+// skinny puppy colors
+$lochmara: #32749B;
 
 // layout variables
 $base: 18px; // our base font-size;

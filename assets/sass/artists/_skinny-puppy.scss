@@ -1,15 +1,24 @@
 // Rot & Assimilate
 .skinny-puppy {
   $link: $gray;
-  $link-light: $red-light;
-  $link-lighter: $red-lighter;
+  $link-light: $lochmara;
+  $link-lighter: $lochmara;
 
-  .artist-font { font-family: $font-skinny-puppy; }
+  $slider-bar: $sirocco;
+  $slider-bar-active: lighten($sirocco, 10%);
+  $slider-button: $lochmara;
+
+
+  .artist-font {
+    font-family: $font-skinny-puppy;
+  }
 
   .title {
     font-family: $font-skinny-puppy;
-    font-size: 5rem;
-    letter-spacing: 3px;
+    font-size: 9rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $lochmara;
   }
 
   .icon { color: $gray-dark; }
@@ -24,4 +33,37 @@
     top: -2rem;
   }
 
+  // overrides for local color varialbes.
+  // css variables are going to be nice... one day :)
+  a {
+    color: $link;
+    &:hover { color: $link-light; }
+  }
+
+  button {
+    color: $white;
+    background-color: $link;
+    &:hover { background-color: $link-light; }
+  }
+
+  .modes strong { color: $link-light; }
+
+  input[type=range]::-webkit-slider-runnable-track { background: $slider-bar; }
+  input[type=range]::-webkit-slider-thumb {
+    border: 0px solid $slider-button;
+    background: $slider-button;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track { background: $slider-bar-active; }
+  input[type=range]::-moz-range-track { background: $slider-bar; }
+  input[type=range]::-moz-range-thumb {
+    border: 0px solid $slider-button;
+    background: $slider-button;
+  }
+  input[type=range]::-ms-fill-upper { background: $slider-bar; }
+  input[type=range]::-ms-thumb {
+    border: 0px solid $slider-button;
+    background: $slider-button;
+  }
+  input[type=range]:focus::-ms-fill-lower { background: $slider-bar; }
+  input[type=range]:focus::-ms-fill-upper { background: $slider-bar-active; }
 }

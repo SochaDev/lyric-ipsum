@@ -9,13 +9,6 @@
   font-weight: normal;
   font-style: normal; }
 
-@font-face {
-  font-family: 'Ogilvie';
-  src: url("../fonts/ogilvie/og.eot");
-  src: url("../fonts/ogilvie/og.eot?#iefix") format("embedded-opentype"), url("../fonts/ogilvie/og.woff2") format("woff2"), url("../fonts/ogilvie/og.woff") format("woff"), url("../fonts/ogilvie/og.ttf") format("truetype"), url("../fonts/ogilvie/og.svg#ogilvieregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
 /*
 SCSS variables are information about icon's compiled state, stored under its original file name
 
@@ -67,44 +60,6 @@ $spritesheet: width height image $spritesheet-sprites;
   content: '\e803'; }
 
 /* '' */
-.depeche-mode .artist-font {
-  font-family: "Violatio", serif; }
-
-.depeche-mode .title {
-  font-family: "Violatio", serif;
-  font-size: 4.25rem; }
-
-.depeche-mode .icon {
-  color: #8a181a; }
-
-.depeche-mode .iconography-top {
-  font-size: 15rem; }
-
-.depeche-mode .iconography-bottom {
-  font-size: 8rem; }
-  .depeche-mode .iconography-bottom .icon {
-    position: relative;
-    right: 2rem; }
-
-.skinny-puppy .artist-font {
-  font-family: "Ogilvie", serif; }
-
-.skinny-puppy .title {
-  font-family: "Ogilvie", serif;
-  font-size: 5rem;
-  letter-spacing: 3px; }
-
-.skinny-puppy .icon {
-  color: #555; }
-
-.skinny-puppy .iconography-top {
-  font-size: 16rem; }
-
-.skinny-puppy .iconography-bottom {
-  font-size: 11rem;
-  position: relative;
-  top: -2rem; }
-
 html {
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
   font-size: 18px;
@@ -184,10 +139,6 @@ button {
   button:hover {
     background-color: #b52022; }
 
-.outline {
-  text-stroke: 0.75px #fff;
-  -webkit-text-stroke: 0.75px #fff; }
-
 .select {
   font-size: 1rem;
   position: relative;
@@ -222,25 +173,6 @@ button {
   .artist label {
     color: #6C726F;
     font-weight: bold; }
-
-header {
-  position: fixed;
-  right: -99px;
-  top: 152px;
-  transform: rotate(-90deg);
-  transform-origin: top left 0; }
-  header a {
-    font-size: 1.5rem;
-    background-color: #6C726F;
-    display: inline-block;
-    padding: 0.25rem 0.45rem;
-    font-weight: bold;
-    color: #6C726F; }
-    header a strong {
-      color: #fff;
-      font-size: 1.75rem; }
-    header a:hover {
-      color: #fff; }
 
 .iconography {
   width: 100%;
@@ -408,3 +340,131 @@ input[type=range]:focus::-ms-fill-upper {
   font-size: 1.25em;
   color: #fff;
   font-weight: bold; }
+
+.depeche-mode .artist-font {
+  font-family: "Violatio", serif; }
+
+.depeche-mode .title {
+  font-family: "Violatio", serif;
+  font-size: 4.25rem; }
+
+.depeche-mode .icon {
+  color: #8a181a; }
+
+.depeche-mode .iconography-top {
+  font-size: 15rem; }
+
+.depeche-mode .iconography-bottom {
+  font-size: 8rem; }
+  .depeche-mode .iconography-bottom .icon {
+    position: relative;
+    right: 2rem; }
+
+.depeche-mode a {
+  color: #8a181a; }
+  .depeche-mode a:hover {
+    color: #b52022; }
+
+.depeche-mode button {
+  color: #fff;
+  background-color: #8a181a; }
+  .depeche-mode button:hover {
+    background-color: #b52022; }
+
+.depeche-mode .modes strong {
+  color: #b52022; }
+
+.depeche-mode input[type=range]::-webkit-slider-runnable-track {
+  background: #6C726F; }
+
+.depeche-mode input[type=range]::-webkit-slider-thumb {
+  border: 0px solid #b52022;
+  background: #b52022; }
+
+.depeche-mode input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #858c89; }
+
+.depeche-mode input[type=range]::-moz-range-track {
+  background: #6C726F; }
+
+.depeche-mode input[type=range]::-moz-range-thumb {
+  border: 0px solid #b52022;
+  background: #b52022; }
+
+.depeche-mode input[type=range]::-ms-fill-upper {
+  background: #6C726F; }
+
+.depeche-mode input[type=range]::-ms-thumb {
+  border: 0px solid #b52022;
+  background: #b52022; }
+
+.depeche-mode input[type=range]:focus::-ms-fill-lower {
+  background: #6C726F; }
+
+.depeche-mode input[type=range]:focus::-ms-fill-upper {
+  background: #858c89; }
+
+.skinny-puppy .artist-font {
+  font-family: "Six Caps", serif; }
+
+.skinny-puppy .title {
+  font-family: "Six Caps", serif;
+  font-size: 9rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #32749B; }
+
+.skinny-puppy .icon {
+  color: #555; }
+
+.skinny-puppy .iconography-top {
+  font-size: 16rem; }
+
+.skinny-puppy .iconography-bottom {
+  font-size: 11rem;
+  position: relative;
+  top: -2rem; }
+
+.skinny-puppy a {
+  color: #888; }
+  .skinny-puppy a:hover {
+    color: #32749B; }
+
+.skinny-puppy button {
+  color: #fff;
+  background-color: #888; }
+  .skinny-puppy button:hover {
+    background-color: #32749B; }
+
+.skinny-puppy .modes strong {
+  color: #32749B; }
+
+.skinny-puppy input[type=range]::-webkit-slider-runnable-track {
+  background: #6C726F; }
+
+.skinny-puppy input[type=range]::-webkit-slider-thumb {
+  border: 0px solid #32749B;
+  background: #32749B; }
+
+.skinny-puppy input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #858c89; }
+
+.skinny-puppy input[type=range]::-moz-range-track {
+  background: #6C726F; }
+
+.skinny-puppy input[type=range]::-moz-range-thumb {
+  border: 0px solid #32749B;
+  background: #32749B; }
+
+.skinny-puppy input[type=range]::-ms-fill-upper {
+  background: #6C726F; }
+
+.skinny-puppy input[type=range]::-ms-thumb {
+  border: 0px solid #32749B;
+  background: #32749B; }
+
+.skinny-puppy input[type=range]:focus::-ms-fill-lower {
+  background: #6C726F; }
+
+.skinny-puppy input[type=range]:focus::-ms-fill-upper {
+  background: #858c89; }

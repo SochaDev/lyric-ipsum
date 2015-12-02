@@ -14,33 +14,6 @@
   }
 }
 
-
-header {
-  position: fixed;
-  right: -99px;
-  top: 152px;
-  transform: rotate(-90deg);
-  transform-origin: top left 0;
-
-  a {
-    font-size: 1.5rem;
-    background-color: $sirocco;
-    display: inline-block;
-    padding: 0.25rem 0.45rem;
-    font-weight: bold;
-    color: $sirocco;
-
-    strong {
-      color: $white;
-      font-size: 1.75rem;
-    }
-
-    &:hover { color: $white; }
-  }
-
-}
-
-
 .iconography {
   width: 100%;
   text-align: center;

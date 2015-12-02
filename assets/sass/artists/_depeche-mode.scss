@@ -25,4 +25,38 @@
       right: 2rem;
     }
   }
+
+  // overrides for local color varialbes.
+  // css variables are going to be nice... one day :)
+  a {
+    color: $link;
+    &:hover { color: $link-light; }
+  }
+
+  button {
+  	color: $white;
+  	background-color: $link;
+  	&:hover { background-color: $link-light; }
+  }
+
+  .modes strong { color: $link-light; }
+
+  input[type=range]::-webkit-slider-runnable-track { background: $slider-bar; }
+  input[type=range]::-webkit-slider-thumb {
+    border: 0px solid $slider-button;
+    background: $slider-button;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track { background: $slider-bar-active; }
+  input[type=range]::-moz-range-track { background: $slider-bar; }
+  input[type=range]::-moz-range-thumb {
+    border: 0px solid $slider-button;
+    background: $slider-button;
+  }
+  input[type=range]::-ms-fill-upper { background: $slider-bar; }
+  input[type=range]::-ms-thumb {
+    border: 0px solid $slider-button;
+    background: $slider-button;
+  }
+  input[type=range]:focus::-ms-fill-lower { background: $slider-bar; }
+  input[type=range]:focus::-ms-fill-upper { background: $slider-bar-active; }
 }

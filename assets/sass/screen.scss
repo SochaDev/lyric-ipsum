@@ -39,9 +39,9 @@
 
 // from here import other partials in a modular fashion,
 // moving from general to more specific.
-@import 'artists/depeche-mode';
-@import 'artists/skinny-puppy';
-
 @import 'global';
 @import 'components/layout';
 @import 'components/slider';
+
+@import 'artists/depeche-mode';
+@import 'artists/skinny-puppy';

@@ -67,13 +67,6 @@ button {
 	&:hover { background-color: $link-light; }
 }
 
-
-.outline {
-	text-stroke: 0.75px $white;
-	-webkit-text-stroke: 0.75px $white;
-}
-
-
 .select {
 	font-size: 1rem;
   position: relative;
