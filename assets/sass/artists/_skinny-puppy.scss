@@ -15,31 +15,53 @@
 
   .title {
     font-family: $font-skinny-puppy;
-    font-size: 9rem;
+    font-size: 14rem;
     font-weight: 400;
     text-transform: uppercase;
     color: $lochmara;
     margin: 0;
   }
 
+  .title,
+  .content {
+    position: relative;
+    top: -5rem;
+  }
+
   .icon { color: $gray-dark; }
 
   .iconography-top {
     font-size: 16rem;
-    position: relative;
-    left: -2.75rem;
+
+    .icon {
+      position: relative;
+      left: -2.75rem;
+      top: -2rem;
+    }
   }
 
   .iconography-bottom {
     font-size: 11rem;
     position: relative;
-    top: -2rem;
+    top: -6rem;
   }
 
-  // just can't get enough ... responsiveness
+  // cleanse, fold, and respond
+  @include media('<=900px') {
+    .title {
+      font-size: 10rem;
+    }
+  }
+
   @include media('<=sm') {
     .title {
       font-size: 8rem;
+    }
+
+    .title,
+    .content {
+      position: relative;
+      top: -3.25rem;
     }
   }
 
@@ -51,8 +73,10 @@
 
     .iconography-top {
       font-size: 10rem;
-      position: relative;
-      left: -1.75rem;
+
+      .icon {
+        left: -1.75rem;
+      }
     }
 
   }

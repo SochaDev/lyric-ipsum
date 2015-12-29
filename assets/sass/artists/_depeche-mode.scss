@@ -11,6 +11,22 @@
     font-size: 4.25rem;
   }
 
+  .iconography-top .icon {
+    position: relative;
+    top: -2.5rem;
+  }
+
+  .iconography-bottom .icon {
+    position: relative;
+    top: -5.5rem;
+  }
+
+  .title,
+  .content {
+    position: relative;
+    top: -4rem;
+  }
+
   .icon { color: $red; }
 
   .iconography-top {
@@ -41,6 +57,15 @@
 
     .iconography-top {
       font-size: 10rem;
+
+      .icon {
+        top: -1.5rem;
+      }
+    }
+
+    .title,
+    .content {
+      top: -2.5rem;
     }
 
     .iconography-bottom {
@@ -49,6 +74,7 @@
       .icon {
         position: relative;
         right: 0.75rem;
+        top: -3.5rem;
       }
     }
   }

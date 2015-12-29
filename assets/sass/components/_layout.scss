@@ -20,6 +20,10 @@
   margin: 0;
 }
 
+.iconography-top {
+  margin-top: 48px;
+}
+
 .title {
   text-align: center;
   margin: 0;
@@ -100,7 +104,7 @@
 
 // general responsive collapsing of everthing that counts
 // ... in large amounts
-@include media('<=xs') {
+@include media('<=sm') {
   .mode-copy,
   .modes {
     display: block;
