@@ -169,7 +169,8 @@ button {
   left: 0;
   right: 0;
   padding: 0.5rem;
-  background-color: rgba(0, 0, 0, 0.8); }
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10; }
   .artist label {
     color: #6C726F;
     font-weight: bold; }
@@ -372,14 +373,6 @@ input[type=range]:focus::-ms-fill-upper {
   font-family: "Violatio", serif;
   font-size: 4.25rem; }
 
-.depeche-mode .iconography-top .icon {
-  position: relative;
-  top: -2.5rem; }
-
-.depeche-mode .iconography-bottom .icon {
-  position: relative;
-  top: -5.5rem; }
-
 .depeche-mode .title,
 .depeche-mode .content {
   position: relative;
@@ -389,13 +382,17 @@ input[type=range]:focus::-ms-fill-upper {
   color: #8a181a; }
 
 .depeche-mode .iconography-top {
-  font-size: 15rem; }
+  font-size: 17rem; }
+  .depeche-mode .iconography-top .icon {
+    position: relative;
+    top: -2.5rem; }
 
 .depeche-mode .iconography-bottom {
   font-size: 8rem; }
   .depeche-mode .iconography-bottom .icon {
     position: relative;
-    right: 2rem; }
+    top: -5.5rem;
+    right: 1.5rem; }
 
 @media (max-width: 800px) {
   .depeche-mode .title {
