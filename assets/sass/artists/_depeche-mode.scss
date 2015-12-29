@@ -26,6 +26,34 @@
     }
   }
 
+  // just can't get enough ... responsiveness
+  @include media('<=sm') {
+    .title {
+      font-size: 4rem;
+    }
+  }
+
+  @include media('<=xs') {
+    .title {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .iconography-top {
+      font-size: 10rem;
+    }
+
+    .iconography-bottom {
+      font-size: 5rem;
+
+      .icon {
+        position: relative;
+        right: 0.75rem;
+      }
+    }
+  }
+
+
   // overrides for local color varialbes.
   // css variables are going to be nice... one day :)
   a {
@@ -41,6 +69,7 @@
 
   .modes strong { color: $link-light; }
 
+  // slider stuffs
   input[type=range]::-webkit-slider-runnable-track { background: $slider-bar; }
   input[type=range]::-webkit-slider-thumb {
     border: 0px solid $slider-button;
