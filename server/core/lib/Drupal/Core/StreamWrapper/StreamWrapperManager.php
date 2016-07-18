@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\Core\StreamWrapper\StreamWrapperManager.
- */
-
 namespace Drupal\Core\StreamWrapper;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
@@ -52,7 +47,7 @@ class StreamWrapperManager extends ContainerAware implements StreamWrapperManage
     if (isset($this->wrappers[$filter])) {
       return $this->wrappers[$filter];
     }
-    else if (isset($this->wrappers[StreamWrapperInterface::ALL])) {
+    elseif (isset($this->wrappers[StreamWrapperInterface::ALL])) {
       $this->wrappers[$filter] = array();
       foreach ($this->wrappers[StreamWrapperInterface::ALL] as $scheme => $info) {
         // Bit-wise filter.

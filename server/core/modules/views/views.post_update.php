@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\views\Entity\View;
 use Drupal\views\Views;
 
 /**
@@ -33,6 +34,15 @@ function views_post_update_update_cacheability_metadata() {
   }
 
 }
+
+/**
+ * @} End of "addtogroup updates-8.0.0-beta".
+ */
+
+/**
+ * @addtogroup updates-8.0.0-rc
+ * @{
+ */
 
 /**
  * Update some views fields that were previously duplicated.
@@ -128,5 +138,47 @@ function views_post_update_cleanup_duplicate_views_data() {
 }
 
 /**
- * @} End of "addtogroup updates-8.0.0-beta".
+ * @} End of "addtogroup updates-8.0.0-rc".
+ */
+
+/**
+ * @addtogroup updates-8.0.x
+ * @{
+ */
+
+/**
+ * Include field formatter dependencies in a view when the formatter is used.
+ */
+function views_post_update_field_formatter_dependencies() {
+  $views = View::loadMultiple();
+  array_walk($views, function(View $view) {
+    $view->save();
+  });
+}
+
+/**
+ * @} End of "addtogroup updates-8.0.x".
+ */
+
+/**
+ * @addtogroup updates-8.1.x
+ * @{
+ */
+
+/**
+ * Fix views with dependencies on taxonomy terms that don't exist.
+ */
+function views_post_update_taxonomy_index_tid() {
+  $views = View::loadMultiple();
+  array_walk($views, function(View $view) {
+    $old_dependencies = $view->getDependencies();
+    $new_dependencies = $view->calculateDependencies()->getDependencies();
+    if ($old_dependencies !== $new_dependencies) {
+      $view->save();
+    }
+  });
+}
+
+/**
+ * @} End of "addtogroup updates-8.1.x".
  */

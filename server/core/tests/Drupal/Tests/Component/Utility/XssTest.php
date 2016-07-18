@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\Tests\Component\Utility\XssTest.
- */
-
 namespace Drupal\Tests\Component\Utility;
 
 use Drupal\Component\Utility\Html;
@@ -515,6 +510,12 @@ class XssTest extends UnitTestCase {
         '<img src="http://example.com/foo.jpg" data-caption="Drupal 8: The best release ever.">',
         'Image tag with data attribute',
         array('img')
+      ),
+      array(
+        '<a data-a2a-url="foo"></a>',
+        '<a data-a2a-url="foo"></a>',
+        'Link tag with numeric data attribute',
+        array('a')
       ),
     );
   }

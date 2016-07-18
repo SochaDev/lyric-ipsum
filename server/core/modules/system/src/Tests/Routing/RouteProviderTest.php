@@ -86,8 +86,6 @@ class RouteProviderTest extends KernelTestBase {
     $this->cache = new MemoryBackend('data');
     $this->pathProcessor = \Drupal::service('path_processor_manager');
     $this->cacheTagsInvalidator = \Drupal::service('cache_tags.invalidator');
-
-    $this->installSchema('system', 'url_alias');
   }
 
   /**
@@ -131,6 +129,15 @@ class RouteProviderTest extends KernelTestBase {
     $this->assertTrue(array_key_exists('/node/5', $candidates), 'Fifth candidate found.');
     $this->assertTrue(array_key_exists('/node/%', $candidates), 'Sixth candidate found.');
     $this->assertTrue(array_key_exists('/node', $candidates), 'Seventh candidate found.');
+  }
+
+  /**
+   * Don't fail when given an empty path.
+   */
+  public function testEmptyPathCandidatesOutlines() {
+    $provider = new TestRouteProvider(Database::getConnection(), $this->state, $this->currentPath, $this->cache, $this->pathProcessor, $this->cacheTagsInvalidator, 'test_routes');
+    $candidates = $provider->getCandidateOutlines([]);
+    $this->assertEqual(count($candidates), 0, 'Empty parts should return no candidates.');
   }
 
   /**

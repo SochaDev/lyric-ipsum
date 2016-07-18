@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\Core\Authentication\AuthenticationProviderChallengeInterface.
- */
-
 namespace Drupal\Core\Authentication;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -21,9 +16,9 @@ interface AuthenticationProviderChallengeInterface {
   /**
    * Constructs an exception which is used to generate the challenge.
    *
-   * @var \Symfony\Component\HttpFoundation\Request
+   * @param \Symfony\Component\HttpFoundation\Request $request
    *   The request.
-   * @var \Exception $exception
+   * @param \Exception $previous
    *   The previous exception.
    *
    * @return \Symfony\Component\HttpKernel\Exception\HttpExceptionInterface|NULL
