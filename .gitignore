@@ -1,6 +1,7 @@
 # Composer stuff.
 composer.phar
 composer.lock
+vendor/
 
 # Node --------------------------------
 
