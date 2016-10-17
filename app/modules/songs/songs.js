@@ -59,10 +59,10 @@
                     song.title = _.unescape(song.title);
                     song.title = song.title.replace('&#039;', "'");
                     $scope.songs.push( _.unescape(song.title) );
-console.log(song.lyrics);
-                    var lyrics = song.lyrics.split(appConfig.lyricDelimiter);
 
-                    _.forEach(lyrics, function(lyric) {
+                    // var lyrics = song.lyrics.split(appConfig.lyricDelimiter);
+
+                    _.forEach(song.lyrics, function(lyric) {
                       lyric = _.unescape(lyric);
                       lyric = lyric.replace('&#039;', "'");
                       lyric = _.trim(lyric);
